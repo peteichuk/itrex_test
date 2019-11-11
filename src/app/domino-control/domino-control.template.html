@@ -1,0 +1,53 @@
+<div>
+  <div layout="row" layout-padding>
+
+    <md-slider-container flex>
+      <md-input-container class="w-100">
+        <input
+          type="number"
+          flex
+          ng-model="scale"
+          aria-label="scale"
+          aria-controls="scale-slider"
+        >
+      </md-input-container>
+      <md-slider
+        class="md-accent"
+        id="scale-slider"
+        md-vertical
+        flex
+        ng-model="scale"
+        min="0"
+        max="4"
+        step="0.1"
+        aria-label="scale"
+      ></md-slider>
+      <h5>scale</h5>
+    </md-slider-container>
+
+    <md-slider-container flex>
+      <md-input-container class="w-100">
+        <input
+          type="number"
+          flex
+          ng-model="speed"
+          aria-label="speed"
+          aria-controls="speed-slider"
+        >
+      </md-input-container>
+      <md-slider
+        class="md-primary"
+        id="speed-slider"
+        md-vertical
+        md-discrete
+        ng-model="speed"
+        min="0"
+        max="3000"
+        step="100"
+        aria-label="speed"
+      ></md-slider>
+      <h5>speed</h5>
+    </md-slider-container>
+
+  </div>
+</div>

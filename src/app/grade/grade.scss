@@ -1,0 +1,41 @@
+@import "../styles/colors";
+
+.scrollable {
+  max-height: 350px;
+  overflow: auto;
+  border: 1px solid $tableBorderColor;
+}
+
+.table-header {
+  border-top: 1px solid $tableBorderColor;
+  border-right: 1px solid $tableBorderColor;
+  border-left: 1px solid $tableBorderColor;
+}
+
+table.students {
+  width: 100%;
+  text-align: left;
+
+  th:nth-child(2n), td:nth-child(2n) {
+    width: 200px;
+    text-align: center;
+  }
+
+  th:nth-child(3n), td:nth-child(3n) {
+    width: 100px;
+  }
+}
+
+table {
+  th, td {
+    padding: 2px 6px;
+  }
+}
+
+.bottom-table tr {
+  vertical-align: top;
+}
+
+.btn-save {
+  margin-top: 16px;
+}

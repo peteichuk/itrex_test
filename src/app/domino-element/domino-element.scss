@@ -1,0 +1,147 @@
+domino-element {
+
+  .element-wrapper {
+    position: relative;
+    height: 60px;
+    width: 60px;
+
+    &.use-border {
+      border: 1px solid;
+      border-color:  black;
+      border-radius: 4px;
+    }
+  }
+
+  .el {
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    height: 8px;
+    width: 8px;
+  }
+
+  .active {
+    &.element-wrapper {
+
+      &.use-border {
+        border-color: rgb(255,82,82);
+      }
+    }
+    .el {
+      background-color: rgb(255,82,82);
+    }
+  }
+
+  .el-of-1 {
+    &:first-child {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .el-of-2 {
+    &:first-child {
+      top: 15%;
+      right: 15%;
+    }
+
+    &:last-child {
+      bottom: 15%;
+      left: 15%;
+    }
+  }
+
+  .el-of-3 {
+    &:first-child {
+      top: 15%;
+      right: 15%;
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:last-child {
+      bottom: 15%;
+      left: 15%;
+    }
+  }
+
+  .el-of-4 {
+    &:first-child {
+      top: 15%;
+      left: 15%;
+    }
+
+    &:nth-child(2) {
+      top: 15%;
+      right: 15%;
+    }
+
+    &:nth-child(3) {
+      bottom: 15%;
+      right: 15%;
+    }
+
+    &:last-child {
+      bottom: 15%;
+      left: 15%;
+    }
+  }
+
+  .el-of-5 {
+    &:first-child {
+      top: 15%;
+      left: 15%;
+    }
+
+    &:nth-child(2) {
+      top: 15%;
+      right: 15%;
+    }
+
+    &:nth-child(3) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:nth-child(4) {
+      bottom: 15%;
+      right: 15%;
+    }
+
+    &:last-child {
+      bottom: 15%;
+      left: 15%;
+    }
+  }
+
+  .el-of-6 {
+    &:nth-child(odd) {
+      left: 15%;
+    }
+
+    &:nth-child(even) {
+      right: 15%;
+    }
+
+    &:nth-child(-n+2) {
+      top: 15%;
+    }
+
+    &:nth-child(n+5) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:nth-child(n+3):nth-child(-n+5) {
+      bottom: 15%;
+    }
+
+  }
+
+}

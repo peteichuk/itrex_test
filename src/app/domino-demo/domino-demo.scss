@@ -1,0 +1,27 @@
+domino-demo {
+
+  .wrapper-domino {
+    height: 500px;
+  }
+
+  .domino {
+    height: 121px;
+    width: 60px;
+    border: 1px solid black;
+    position: relative;
+    border-radius: 4px;
+
+    &:after {
+      content: "";
+      display: block;
+      border-bottom: 1px solid black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 1px;
+      width: 100%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+}

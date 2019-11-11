@@ -1,0 +1,12 @@
+<section class="header layout-column">
+
+  <md-tabs
+    class="md-primary"
+    md-selected="selectedIndex"
+  >
+    <md-tab ng-repeat="link in links" ui-sref="{{link.url}}" ui-sref-active="active">{{link.name}}</md-tab>
+  </md-tabs>
+
+</section>
+
+

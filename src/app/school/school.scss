@@ -1,0 +1,12 @@
+md-tabs:not(.md-no-tab-content):not(.md-dynamic-height).custom-height {
+  min-height: 665px;
+}
+
+.md-button.md-fab.md-mini {
+  width: 22px;
+  height: 22px;
+  min-height: 22px;
+  line-height: 22px;
+  right: -22px;
+  margin: 0;
+}

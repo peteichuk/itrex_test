@@ -1,0 +1,9 @@
+div[ui-view] {
+  &.ng-enter {
+    opacity: 0;
+    transition: all .5s ease;
+  }
+  &.ng-enter-active {
+    opacity: 1;
+  }
+}

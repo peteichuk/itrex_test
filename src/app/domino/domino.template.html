@@ -1,0 +1,21 @@
+<div class="md-padding" ng-controller="dominoCtrl">
+  <div flex-grow="1" layout="row" flex="auto 100">
+    <div flex="40">
+      <div class="wrapper-domino-elements" layout="row">
+        <domino-element
+          ng-repeat="number in domino | numberToLengthArray: number"
+          number="number"
+          use-border="true"
+          set-selected="slectedFirstByIndex === $index + 1 || slectedSecondByIndex === $index + 1"
+          ng-click="chooseDominoElement(number)"
+        ></domino-element>
+      </div>
+      <div>
+        <domino-control scale="scale" speed="speed"></domino-control>
+      </div>
+    </div>
+    <div flex-grow="1">
+      <domino-demo selected-domino="selectedDomino" scale="scale" speed="speed" reset="reset()"></domino-demo>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div ng-if="selectedDomino.length === 2">
+  <div layout="row" layout-align="center center">
+    <md-button class="md-icon-button" ng-click="setRotate(variantRotate.decrement)" ng-disabled="rotate === -90 || disableBtns">
+      <i class="fa fa-undo" aria-hidden="true"></i>
+    </md-button>
+    <md-button class="md-button" ng-click="setRotate()" ng-disabled="disableBtns">
+      new
+    </md-button>
+    <md-button class="md-icon-button" ng-click="setRotate(variantRotate.increment)" ng-disabled="rotate === 90 || disableBtns">
+      <i class="fa fa-repeat" aria-hidden="true"></i>
+    </md-button>
+  </div>
+
+  <div class="wrapper-domino" layout="row" layout-align="center center">
+    <div class="domino" ng-style="{'transform': 'scale(' + scale + ') rotate(' + rotate + 'deg)', 'transition': 'all ' + speed + 'ms'}">
+      <domino-element ng-repeat="domino in selectedDomino track by $index" number="domino"></domino-element>
+    </div>
+  </div>
+</div>

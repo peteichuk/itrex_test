@@ -1,0 +1,34 @@
+<div ng-controller="schoolCtrl">
+  <md-card>
+    <md-card-content>
+      <md-tabs
+        class="custom-height"
+        md-border-bottom
+        md-autoselect
+        md-swipe-content
+      >
+        <md-tab
+          ng-repeat="grade in grades"
+        >
+          <md-tab-label>
+            GRADE {{grade.name}}
+            <md-button class="md-fab md-mini md-warn" aria-label="remove" ng-click="removeGrade(grade.id, $index)">
+              &times;
+            </md-button>
+          </md-tab-label>
+          <md-tab-body>
+            <grade grade-id="{{grade.id}}" name="grade.name"></grade>
+          </md-tab-body>
+        </md-tab>
+        <md-tab>
+          <md-tab-label>
+            <span class="md-title">+</span>
+          </md-tab-label>
+          <md-tab-body>
+            <create-grade created-grade="createdGrade"></create-grade>
+          </md-tab-body>
+        </md-tab>
+      </md-tabs>
+    </md-card-content>
+  </md-card>
+</div>

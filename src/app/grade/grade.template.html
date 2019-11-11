@@ -1,0 +1,82 @@
+<div layout="row" layout-align="space-between start">
+
+  <md-input-container>
+    <label>GRADE</label>
+    <input
+      ng-model="name"
+      ng-blur="updateGrade()"
+    >
+  </md-input-container>
+  <p>
+    Average {{average}}
+  </p>
+</div>
+
+<table class="table-header students" ng-if="students.length">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>GPA</th>
+    <th></th>
+  </tr>
+  </thead>
+</table>
+<div
+  class="scrollable"
+  ng-if="students.length"
+  when-scrolled="getStudents()"
+>
+  <table class="students">
+    <tbody>
+    <tr ng-repeat="student in students">
+      <td>
+        {{student.name}}
+      </td>
+      <td>
+        {{student.assessment}}
+      </td>
+      <td>
+        <md-button
+          class="md-raised md-warn"
+          flex="100"
+          ng-disabled="isAddingStudent"
+          ng-click="removeStudent(student.id, $index)"
+        >
+          Remove
+        </md-button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<p ng-if="!students.length">
+  Not students found.
+</p>
+<table class="students bottom-table">
+  <tbody>
+  <tr>
+    <td>
+      <md-input-container class="w-100">
+        <label>Name</label>
+        <input ng-model="newStudent.name" id="name">
+      </md-input-container>
+    </td>
+    <td>
+      <md-input-container class="w-100">
+        <label>Assessment</label>
+        <input ng-model="newStudent.assessment" type="number" min="0" max="5" step="0.1">
+      </md-input-container>
+    </td>
+    <td>
+      <md-button
+        class="md-raised md-primary btn-save"
+        flex="100"
+        ng-disabled="isAddingStudent || !newStudent.name || !newStudent.assessment"
+        ng-click="addStudent()"
+      >
+        Add
+      </md-button>
+    </td>
+  </tr>
+  </tbody>
+</table>

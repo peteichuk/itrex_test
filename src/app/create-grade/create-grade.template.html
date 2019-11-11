@@ -1,0 +1,18 @@
+<form name="gradeForm">
+
+  <md-input-container>
+    <label>Grade</label>
+    <input ng-model="name">
+  </md-input-container>
+
+  <md-input-container>
+    <md-button
+      class="md-primary"
+      ng-click="createGrade()"
+      ng-disabled="!name"
+    >
+      Save
+    </md-button>
+  </md-input-container>
+
+</form>
